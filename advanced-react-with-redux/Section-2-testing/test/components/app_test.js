@@ -3,8 +3,14 @@ import App from '../../src/components/app';
 
 describe('App', () => {
   
-  it('shows the correct text', () => {
-    const component = renderComponent(App);
-    expect(component).to.contain('React simple starter');
+  let component = null;
+
+  beforeEach(() =>{
+    component = renderComponent(App);
+  });
+
+
+  it('show a comment box', () => {
+    expect(component.find('.commentBox')).to.exist;
   });
 });
